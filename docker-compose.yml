@@ -1,0 +1,14 @@
+version: '3.1'
+
+services:
+  what-is-the-plane-bot:
+    image: what-is-the-plane-bot
+    container_name: what-is-the-plane-bot
+    network_mode: host
+    environment:
+      TELEGRAM_TOKEN: ${TELEGRAM_TOKEN}
+      CHECK_DISTANCE: 10  # km
+    logging:
+      driver: "json-file"
+      options:
+        max-size: "30m"
